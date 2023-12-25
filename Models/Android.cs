@@ -1,22 +1,23 @@
+﻿using DesafioPOO.Models.Interface;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DesafioPOO.Models
 {
-    // TODO: Herdar da classe "Smartphone"
-    internal sealed class Nokia : Smartphone
+    internal class Android : Smartphone
     {
-        public Nokia(string numero, string mei, string modelo, int memoria, bool memoriaEhExpansivel) : base(numero, mei, modelo, memoria, memoriaEhExpansivel)
+        public Android(string numero, string modelo, string mei, int memoria, bool memoriaEhExpansivel) : base(numero, modelo, mei, memoria, memoriaEhExpansivel)
         {
             ListaApps = new List<Aplicativo> { new Aplicativo("GooglePlay"), new Aplicativo("Camera"), new Aplicativo("Telefone"), new Aplicativo("Mensagens") };
         }
 
-
-
-
-        // TODO: Sobrescrever o método "InstalarAplicativo"
         public override void InstalarAplicativo(string nomeApp)
         {
             Console.WriteLine($"instalando app em {Modelo}");
-            var app = ListaApps.FirstOrDefault(a => a.Nome == "GooglePlay");
+            var app = ListaApps.FirstOrDefault(a=>a.Nome == "GooglePlay");
             if (app != null)
             {
                 app.AbriAplicativo();
@@ -24,5 +25,6 @@ namespace DesafioPOO.Models
                 ListaApps.Add(aplicativoInstalado);
             }
         }
+
     }
 }

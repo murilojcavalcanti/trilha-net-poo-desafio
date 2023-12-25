@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0628: Novo membro protegido declarado no tipo selado
+dotnet_diagnostic.CS0628.severity = suggestion
